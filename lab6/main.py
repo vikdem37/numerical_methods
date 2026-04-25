@@ -83,6 +83,8 @@ if __name__ == "__main__":
     print(f"\nLU-розклад: ||L*U - A|| = {lu_err:.4e}")
 
     X = solve_lu(L, U, B)
+    save_vector("lab6/vector_X.txt", X)
+    print("Збережено X у файлі lab6/vector_X.txt")
 
     eps = norm_inf(mat_vec(A, X) - B)
     err_x = norm_inf(X - x_true)
